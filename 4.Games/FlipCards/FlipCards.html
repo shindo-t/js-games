@@ -75,7 +75,7 @@
 
       // カード裏返し
       function flip(e) {
-        let src = e.srcElement; // クリックされた要素
+        let src = e.target; // クリックされた要素
         if (flipTimer || src.textContent != "") {
           return; // 既に２枚反転 or 反転済のカードクリック時は何もしない
         }

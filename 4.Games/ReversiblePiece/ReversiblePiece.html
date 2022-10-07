@@ -249,7 +249,7 @@
       function getFlipCellsOneDir(i, j, dx, dy, color) {
         let x = i + dx;
         let y = j + dy;
-        let fliped = []; // 挟まれた駒の配列
+        let flipped = []; // 挟まれた駒の配列
 
         if (
           x < 0 ||
@@ -261,7 +261,7 @@
         ) {
           return []; // 盤外、同色、空ならfalse（挟めない）
         }
-        fliped.push([x, y]);
+        flipped.push([x, y]);
 
         while (true) {
           x += dx;
@@ -270,9 +270,9 @@
             return []; //  盤外、空ならfalse（挟めない）
           }
           if (data[x][y] == color) {
-            return fliped; // 挟めた！
+            return flipped; // 挟めた！
           } else {
-            fliped.push([x, y]);
+            flipped.push([x, y]);
           }
         }
       }

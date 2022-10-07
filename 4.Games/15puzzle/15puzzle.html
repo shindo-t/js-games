@@ -43,12 +43,12 @@
 
         for (let i = 0; i < 1000; i++) {
           // 10回、疑似的にランダムにクリックして並べ替え
-          click({ srcElement: { index: Math.floor(Math.random() * 16) } });
+          click({ target: { index: Math.floor(Math.random() * 16) } });
         }
       }
 
       function click(e) {
-        let i = e.srcElement.index; // どの場所がクリックされたか
+        let i = e.target.index; // どの場所がクリックされたか
 
         if (i - 4 >= 0 && tiles[i - 4].value == 0) {
           swap(i, i - 4); // 上と入れ替え
@@ -62,33 +62,23 @@
       }
 
       // i番目のタイルとj番目のタイルの番号を入れ替え
-      function swap(i, j, solve) {
+      function swap(i, j) {
         let tmp = tiles[i].value; // 変更先を一時退避
         tiles[i].textContent = tiles[j].textContent;
         tiles[i].value = tiles[j].value;
         tiles[j].textContent = tmp;
         tiles[j].value = tmp;
-        if(isNaN(solve)){
-          hist.push([i, j])
-        }
-        document.getElementById("hist").textContent = hist.reduce((p, c) => p + "->" + c, "")
-      }
-
-      function solve(){
-        setInterval(tick, 500)
       }
 
       function tick(){
         if (hist.length > 0){
           let v = hist.pop()
-          swap(v[1], v[0], true)
+          swap(v[1], v[0])
         }
       }
     </script>
   </head>
   <body onload="init()">
     <table id="table"></table>
-    <p id="hist"></p>
-    <button id="solve" onclick="solve()">solve</button>
   </body>
 </html>
