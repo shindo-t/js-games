@@ -85,11 +85,11 @@
 
         if (numWhite + numBlack == 64 || (!blackFlip && !whiteFlip)) {
           if (numWhite > numBlack) {
-            showMessage("白の勝ち！");
+            document.getElementById("message").textContent = "白の勝ち！";
           }else if(numWhite < numBlack){
-            showMessage("黒の勝ち");
+            document.getElementById("message").textContent = "黒の勝ち！";
           }else{
-            showMessage("引き分け");
+            document.getElementById("message").textContent = "引き分け";
           }
           return
         }
