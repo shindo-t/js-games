@@ -55,7 +55,7 @@
           }
           b.appendChild(tr);
         }
-        // 最初に4つのピースを配置
+        // 最初に4つの石を配置
         put(3, 3, BLACK);
         put(4, 4, BLACK);
         put(3, 4, WHITE);
@@ -64,7 +64,7 @@
       }
 
       function update() {
-        // 白・黒の数を数えて表示
+        // 白／黒の数を数えて表示
         let numWhite = 0;
         let numBlack = 0;
         for (let x = 0; x < 8; x++) {
@@ -136,7 +136,7 @@
         }
       }
 
-      // (i,j)にcolor色の駒を置く
+      // (i,j)にcolor色の石を置く
       function put(i, j, color) {
         let c = document.getElementById("cell" + i + j);
         c.textContent = "●";
@@ -207,7 +207,7 @@
         return tmpData;
       }
 
-      // 挟める駒があるか？
+      // 挟める石があるか？
       function canFlip(color) {
         for (let x = 0; x < 8; x++) {
           for (let y = 0; y < 8; y++) {
@@ -220,10 +220,10 @@
         return false;
       }
 
-      // (i,j)に駒をおいたときに駒を挟めるか？
+      // (i,j)に石を置いたときに石を挟めるか？
       function getFlipCells(i, j, color) {
         if (data[i][j] == BLACK || data[i][j] == WHITE) {
-          return []; // 既に駒がある時はなにもしない
+          return []; // すでに石があるときは何もしない
         }
 
         // 相手を挟めるか、左上、上、右上、左、右、左下、下、右下と順番に調査
@@ -245,11 +245,11 @@
         return result;
       }
 
-      // (i,j)に駒をおいたときに、(dx,dy)方向で駒を挟めるか？
+      // (i,j)に石を置いたときに、(dx,dy)方向で石を挟めるか？
       function getFlipCellsOneDir(i, j, dx, dy, color) {
         let x = i + dx;
         let y = j + dy;
-        let flipped = []; // 挟まれた駒の配列
+        let flipped = []; // 挟まれた石の配列
 
         if (
           x < 0 ||
