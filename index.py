@@ -1,25 +1,5 @@
 import os, glob
 
-# with open("index.htm", mode="w", encoding="utf-8") as file:
-#     file.write("""<!DOCTYPE html>
-# <html>
-#   <head>
-#     <meta charset="UTF-8" />
-#   </head>
-#   <body>""")
-#     for f in glob.glob("**", recursive=True):
-#         segs = f.split("\\")
-#         if os.path.isdir(f):
-#             dirn = len(segs)
-#             if 0 < dirn < 4:
-#                 file.write(f"<h{dirn}>{segs[-1]}</h{dirn}>\n") 
-#         if os.path.isfile(f):
-#             ext = os.path.splitext(f)
-#             if ext[1] == ".html" or ext[1] == ".htm":
-#                 file.write(f"<a href='{f}'>{segs[-1]}</a>\n")
-#     file.write("</body></html>")
-
-
 folders = {}
 for f in glob.glob("**", recursive=True):
     if os.path.isdir(f):

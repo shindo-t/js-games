@@ -79,10 +79,10 @@
         ctx.lineWidth = 5;
         back = document.getElementById("back")
 
-        document.onmousedown = () => {
+        window.onpointerdown = () => {
           isMouseDown = true; // マウス押下中
         };
-        document.onmouseup = () => {
+        window.onpointerup = () => {
           isMouseDown = false; // マウスを離した→ジャンプ
           jumper.jump(power / 20);
         };
