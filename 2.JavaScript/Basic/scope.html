@@ -1,26 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <script>
-      let score = 0,
-        timer;
+      let count = 0;
 
-      function keydown(e) {
-        let code = e.keyCode;
-        if (code == 34) {
-          // ...
+      function test(e) {
+        let a = "hello";
+        for (let i = 0; i < 3; i++) {
+          console.log("count=" + count + " i=" + i);
+          console.log(a)
         }
-        score += 100;
-        // ...
+        count++;
       }
-
-      function tick() {
-        let now = new Date();
-        if (score > 1000) {
-          clearInterval(timer);
-        }
-        // ...
+      function init() {
+        count = 10;
       }
     </script>
   </head>

@@ -33,7 +33,7 @@
             td.className = "tile"; // class設定
             td.index = index; // タイルの並び順
             td.value = index; // 描画されている値
-            td.textContent = index == 0 ? "" : index; // 0は空欄に
+            td.textContent = index == 15 ? "" : index+1; // 0は空欄に
             td.onclick = click; // クリック時のハンドラ登録
             tr.appendChild(td); // 行trに列tdを追加
             tiles.push(td);
@@ -50,13 +50,13 @@
       function click(e) {
         let i = e.target.index; // どの場所がクリックされたか
 
-        if (i - 4 >= 0 && tiles[i - 4].value == 0) {
+        if (i - 4 >= 0 && tiles[i - 4].value == 15) {
           swap(i, i - 4); // 上と入れ替え
-        } else if (i + 4 < 16 && tiles[i + 4].value == 0) {
+        } else if (i + 4 < 16 && tiles[i + 4].value == 15) {
           swap(i, i + 4); // 下と入れ替え
-        } else if (i % 4 != 0 && tiles[i - 1].value == 0) {
+        } else if (i % 4 != 0 && tiles[i - 1].value == 15) {
           swap(i, i - 1); // 左と入れ替え
-        } else if (i % 4 != 3 && tiles[i + 1].value == 0) {
+        } else if (i % 4 != 3 && tiles[i + 1].value == 15) {
           swap(i, i + 1); // 右と入れ替え
         }
       }
@@ -64,9 +64,11 @@
       // i番目のタイルとj番目のタイルの番号を入れ替え
       function swap(i, j) {
         let tmp = tiles[i].value; // 変更先を一時退避
-        tiles[i].textContent = tiles[j].textContent;
+        let x = tiles[i].value == 15 ? "" : tiles[i].value + 1
+        let y = tiles[j].value == 15 ? "" : tiles[j].value + 1
+        tiles[i].textContent = y;
         tiles[i].value = tiles[j].value;
-        tiles[j].textContent = tmp;
+        tiles[j].textContent = x;
         tiles[j].value = tmp;
       }
 
