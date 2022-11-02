@@ -21,14 +21,14 @@
       const tiles = []; // タイル配列
 
       function init() {
-        let table = document.getElementById("table"); // table要素の参照
+        let table = document.getElementById("table"); // <table>要素の参照
 
         for (let i = 0; i < 4; i++) {
           // 4行分ループ
-          let tr = document.createElement("tr"); // tr要素の作成
+          let tr = document.createElement("tr"); // <tr>要素の作成
           for (let j = 0; j < 4; j++) {
             // 各列分ループ
-            let td = document.createElement("td"); // td要素の作成
+            let td = document.createElement("td"); // <td>要素の作成
             let index = i * 4 + j;
             td.className = "tile"; // class設定
             td.index = index; // タイルの並び順
@@ -38,11 +38,11 @@
             tr.appendChild(td); // 行trに列tdを追加
             tiles.push(td);
           }
-          table.appendChild(tr); // テーブルに行trを追加
+          table.appendChild(tr); // テーブルに行<tr>を追加
         }
 
         for (let i = 0; i < 1000; i++) {
-          // 10回、疑似的にランダムにクリックして並べ替え
+          // 1000回、疑似的にランダムにクリックして並べ替え
           click({ target: { index: Math.floor(Math.random() * 16) } });
         }
       }
