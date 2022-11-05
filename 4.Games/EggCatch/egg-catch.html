@@ -30,7 +30,7 @@
       };
 
       function tick() {
-        ctx.drawImage(back, 0, 0); // 背景画像を描画
+        ctx.drawImage(back, 0, 0); // 背景描画
         ctx.drawImage(basket, basketX - 50, 500); // かご描画
         if ( Math.random() > prob) { 
           eggs.push({ x: Math.random() * 500, y: 1 });  // たまご追加
