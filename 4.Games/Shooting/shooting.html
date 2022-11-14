@@ -129,7 +129,7 @@
         count++;
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, 600, 600);
-        ctx.drawImage(back, 0, 0);
+        ctx.drawImage(back, 0, 0); // 背景描画
         stars.forEach((s) => s.tick()); // 星の移動
         ship.tick();
         if (count % interval == 0) {
