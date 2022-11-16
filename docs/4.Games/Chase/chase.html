@@ -64,7 +64,7 @@
         // 初期化
         ctx = document.getElementById("field").getContext("2d");
         ctx.font = "32px 'Times New Roman'";
-        document.onmousemove = (e) => {
+        window.onmousemove = (e) => {
           mouse.x = e.clientX;
           mouse.y = e.clientY;
         }; // マウス移動ハンドラ

@@ -24,7 +24,7 @@
         back = document.getElementById("back");
 
         timerId = setInterval(tick, 50);
-        document.onmousemove = (e) => {
+        window.onmousemove = (e) => {
           basketX = e.clientX;  // マウスX座標をかごの座標に反映
         };
       };

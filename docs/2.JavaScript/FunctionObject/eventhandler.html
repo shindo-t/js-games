@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <script>
       // クリックのイベントハンドラー
-      document.onclick = function (e) {
-        console.log("document.onclick " + e.type);
+      window.onclick = function (e) {
+        console.log("window.onclick " + e.type);
       };
 
       // マウス押下のイベントハンドラー
-      document.onmousedown = mymousedown;
+      window.onmousedown = mymousedown;
       function mymousedown(e) {
-        console.log("document.onclick " + e.type);
+        console.log("window.onclick " + e.type);
       }
 
       function init() {
